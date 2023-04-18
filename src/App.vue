@@ -8,15 +8,17 @@ import 'primeflex/primeflex.css';
 <template>
   <header class="flex flex-column align-items-center">
     <div class="w-5 flex justify-content-center align-items-center">
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-   <img alt="Typesript logo" class="logo" src="@/assets/typescriptIcon.png" width="125" height="125" />
-</div>
+      <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+      <img alt="Typesript logo" class="logo" src="@/assets/typescriptIcon.png" width="125" height="125" />
+    </div>
 
     <div class="wrapper">
-      
+
       <nav>
         <RouterLink to="/">Créer un compte</RouterLink>
         <RouterLink to="/login">Se connecter</RouterLink>
+        <RouterLink to="/articles">Blog</RouterLink>
+
       </nav>
     </div>
   </header>
