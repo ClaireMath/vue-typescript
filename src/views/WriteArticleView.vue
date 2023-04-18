@@ -7,6 +7,11 @@ import Textarea from 'primevue/textarea';
 // const articles: 
 
 
+const addArticle = (e: Event) => {
+  e.preventDefault()
+  console.log("bouton ajouter l'article cliqué")
+}
+
 </script>
 
 <template>
@@ -22,12 +27,12 @@ import Textarea from 'primevue/textarea';
 
 
         <div class="card flex justify-content-center">
-          <form @submit="onSubmit" class="flex flex-column gap-2">
+          <form @submit="addArticle" class="flex flex-column gap-2">
             <span class="p-float-label">
               <Textarea id="value" v-model="value" rows="14" cols="100" />
               <label for="value">Description</label>
             </span>
-             <Button type="submit" label="Submit" />
+             <Button type="submit" label="Ajouter mon article" />
           </form>
 
         </div>

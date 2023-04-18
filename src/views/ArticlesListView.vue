@@ -4,6 +4,9 @@ import InputText from 'primevue/inputtext';
 import 'primeflex/primeflex.css';
 import 'primeicons/primeicons.css';
 
+const goToAddArticle = () => {
+  console.log("bouton ajouter l'article cliqué")
+}
 // const articles: 
 
 
@@ -13,7 +16,7 @@ import 'primeicons/primeicons.css';
   <div>
     <h1 class="mt-8 text-center">Affichage des articles</h1>
 
-    <RouterLink to="/writeArticle">+ Ajouter un article</RouterLink>
+    <RouterLink to="/writeArticle" @click="goToAddArticle">+ Ajouter un article</RouterLink>
 
 
     <div class="card flex justify-content-center">

@@ -3,6 +3,11 @@ import Button from "primevue/button"
 import InputText from 'primevue/inputtext';
 import 'primeflex/primeflex.css';
 
+
+const login = () => {
+console.log("bouton login cliqué")
+
+}
 </script>
 <template>
   <div class="about ">
@@ -19,7 +24,7 @@ import 'primeflex/primeflex.css';
           <label for="mdp">Mot de passe</label>
         </span>
          <div class="p-float-label mb-4 flex justify-content-center">
-        <Button label="Valider" icon="pi pi-check" />
+        <Button label="Valider" icon="pi pi-check" @click="login"/>
          </div>
       </div>
     </div>

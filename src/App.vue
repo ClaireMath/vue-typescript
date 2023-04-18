@@ -2,6 +2,14 @@
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 import 'primeflex/primeflex.css';
+import Button from 'primevue/button';
+
+/* function logout() {
+  console.log("bouton cliqué")
+} */
+const logout = () => {
+  console.log("bouton cliqué")
+}
 
 </script>
 
@@ -16,8 +24,10 @@ import 'primeflex/primeflex.css';
 
       <nav>
         <RouterLink to="/">Créer un compte</RouterLink>
-        <RouterLink to="/login">Se connecter</RouterLink>
-        <RouterLink to="/articles">Blog</RouterLink>
+        
+        <RouterLink v-if="true" to="/login">Se connecter</RouterLink>
+         <RouterLink v-else to="/login" @click="logout">Se déconnecter</RouterLink>
+         <RouterLink to="/articles">Blog</RouterLink>
 
       </nav>
     </div>
