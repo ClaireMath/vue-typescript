@@ -1,18 +1,22 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import 'primeflex/primeflex.css';
+
 </script>
 
 <template>
-  <header>
+  <header class="flex flex-column align-items-center">
+    <div class="w-5 flex justify-content-center align-items-center">
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+   <img alt="Typesript logo" class="logo" src="@/assets/typescriptIcon.png" width="125" height="125" />
+</div>
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
+      
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/">Créer un compte</RouterLink>
+        <RouterLink to="/login">Se connecter</RouterLink>
       </nav>
     </div>
   </header>
@@ -29,6 +33,7 @@ header {
 .logo {
   display: block;
   margin: 0 auto 2rem;
+  border-radius: 35px;
 }
 
 nav {
