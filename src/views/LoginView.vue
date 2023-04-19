@@ -2,12 +2,17 @@
 import Button from "primevue/button"
 import InputText from 'primevue/inputtext';
 import 'primeflex/primeflex.css';
+import { onMounted, ref, type Ref } from 'vue';
 
+const email = ref();
+const password = ref();
 
 const login = () => {
-console.log("bouton login cliqué")
+console.log(`bouton login cliqué ${email.value} ${password.value}`)
 
 }
+
+
 </script>
 <template>
   <div class="about ">
@@ -16,11 +21,11 @@ console.log("bouton login cliqué")
 
       <div>
         <span class="p-float-label mb-4">
-          <InputText id="email" v-model="value" />
+          <InputText id="email" v-model="email" />
           <label for="email">E-mail</label>
         </span>
         <span class="p-float-label mb-4">
-          <InputText id="mdp" v-model="value" />
+          <InputText id="mdp" v-model="password" />
           <label for="mdp">Mot de passe</label>
         </span>
          <div class="p-float-label mb-4 flex justify-content-center">

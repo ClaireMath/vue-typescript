@@ -24,6 +24,10 @@ const addArticle = (e: Event) => {
           <InputText id="articleTitle" v-model="value" class="w-6" />
           <label for="articleTitle">Titre de l'article</label>
         </span>
+         <span class="p-float-label my-4 w-full ">
+            <InputText id="articleURL" v-model="value" class="w-6" />
+            <label for="articleURL">URL de l'article</label>
+          </span>
 
 
         <div class="card flex justify-content-center">
