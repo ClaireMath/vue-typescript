@@ -34,31 +34,33 @@ const createArticle = async (event: any) => {
     <div class="card flex justify-content-center">
       <div>
         <span class="p-float-label my-4 w-full ">
-            <InputText id="photoArticle" v-model="photo" class="w-6" />
-            <label for="photoArticle">Photo URL</label>
-          </span>
-          <div class="flex flex-wrap gap-6">
-    <div class="flex align-items-center">
-        <RadioButton v-model="tag" inputId="afrique" name="afrique" value="afrique" />
-        <label for="afrique" class="ml-2">Afrique</label>
-    </div>
-    <div class="flex align-items-center">
-        <RadioButton v-model="tag" inputId="amerique" name="amerique" value="amerique" />
-        <label for="amerique" class="ml-2">Amerique</label>
-    </div>
-    <div class="flex align-items-center">
-        <RadioButton v-model="tag" inputId="oceanie" name="oceanie" value="oceanie" />
-        <label for="oceanie" class="ml-2">Oceanie</label>
-    </div>
-    <div class="flex align-items-center">
-        <RadioButton v-model="tag" inputId="europe" name="europe" value="europe" />
-        <label for="europe" class="ml-2">Europe</label>
-    </div>
-    <div class="flex align-items-center">
-        <RadioButton v-model="tag" inputId="asie" name="asie" value="asie" />
-        <label for="asie" class="ml-2">Asie</label>
-    </div>
-</div>
+          <InputText id="photoArticle" v-model="photo" class="w-6" />
+          <label for="photoArticle">Photo URL</label>
+        </span>
+
+        
+        <div class="flex flex-wrap gap-6">
+          <div class="flex align-items-center">
+            <RadioButton v-model="tag" inputId="afrique" name="afrique" value="afrique" />
+            <label for="afrique" class="ml-2">Afrique</label>
+          </div>
+          <div class="flex align-items-center">
+            <RadioButton v-model="tag" inputId="amerique" name="amerique" value="amerique" />
+            <label for="amerique" class="ml-2">Amerique</label>
+          </div>
+          <div class="flex align-items-center">
+            <RadioButton v-model="tag" inputId="oceanie" name="oceanie" value="oceanie" />
+            <label for="oceanie" class="ml-2">Oceanie</label>
+          </div>
+          <div class="flex align-items-center">
+            <RadioButton v-model="tag" inputId="europe" name="europe" value="europe" />
+            <label for="europe" class="ml-2">Europe</label>
+          </div>
+          <div class="flex align-items-center">
+            <RadioButton v-model="tag" inputId="asie" name="asie" value="asie" />
+            <label for="asie" class="ml-2">Asie</label>
+          </div>
+        </div>
         <span class="p-float-label my-4 w-full ">
           <InputText id="articleTitle" v-model="titre" class="w-6" />
           <label for="articleTitle">Titre de l'article</label>
@@ -70,7 +72,7 @@ const createArticle = async (event: any) => {
               <label for="value">Description</label>
             </span>
 
-             <Button type="submit" label="Ajouter mon article" class="w-5 align-self-center" @click="createArticle"/>
+            <Button type="submit" label="Ajouter mon article" class="w-5 align-self-center" @click="createArticle" />
 
           </div>
 
