@@ -6,7 +6,7 @@ export class ArticleService {
 
 
 async getAllArticles() : Promise<ArticleModel[]>  {
-  const API_BASE_URL = 'http://localhost:8080/article/articles/all';
+  const API_BASE_URL = 'http://localhost:8080/article/articles/All';
   const response = await axios.get<ArticleModel[]>(`${API_BASE_URL}`);
   console.log(response);
   

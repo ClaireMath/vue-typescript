@@ -7,6 +7,7 @@ import Textarea from 'primevue/textarea';
 import Dropdown from 'primevue/dropdown';
 import { ref } from "vue";
 import { ArticleService } from "@/services/ArticleService";
+import RadioButton from 'primevue/radiobutton';
 
 // const articles: 
 
@@ -55,9 +56,28 @@ selectedCity.value
           </span>
         <span class="p-float-label my-4 w-full ">
           <p>Choisissez un Tag (continent) : </p>
-          <div class="card flex justify-content-center">
-        <Dropdown v-model="tag" :options="cities" optionLabel="name" placeholder="Select a continent" class="w-full md:w-14rem" />
+          <div class="flex flex-wrap gap-8">
+    <div class="flex align-items-center">
+        <RadioButton v-model="tag" inputId="afrique" name="afrique" value="afrique" />
+        <label for="afrique" class="ml-4">Afrique</label>
     </div>
+    <div class="flex align-items-center">
+        <RadioButton v-model="tag" inputId="europe" name="europe" value="europe" />
+        <label for="europe" class="ml-4">Europe</label>
+    </div>
+    <div class="flex align-items-center">
+        <RadioButton v-model="tag" inputId="amerique" name="amerique" value="amerique" />
+        <label for="amerique" class="ml-4">Amerique</label>
+    </div>
+    <div class="flex align-items-center">
+        <RadioButton v-model="tag" inputId="asie" name="asie" value="asie" />
+        <label for="asie" class="ml-4">Asie</label>
+    </div>
+    <div class="flex align-items-center">
+        <RadioButton v-model="tag" inputId="oceanie" name="oceanie" value="oceanie" />
+        <label for="oceanie" class="ml-4">Oceanie</label>
+    </div>
+</div>
         </span>
         <span class="p-float-label my-4 w-full ">
           <InputText id="articleTitle" v-model="titre" class="w-6" />

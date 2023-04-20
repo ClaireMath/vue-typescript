@@ -11,7 +11,7 @@ const servArticle: ArticleService = new ArticleService();
 
 
 onMounted(async () => {
-  const notConnected = localStorage.getItem("notConnected").value;
+  //const notConnected = localStorage.getItem("notConnected").value;
 
     articlesList.value = await servArticle.getAllArticles();
     console.log(articlesList.value);
