@@ -13,9 +13,9 @@ async getAllArticles() : Promise<ArticleModel[]>  {
   return response.data;
 }
 
-async registerArticle() : Promise<ArticleModel>  {
+async registerArticle(obj: ArticleModel) : Promise<ArticleModel>  {
     const API_BASE_URL = 'http://localhost:8080/article/register';
-    const response = await axios.get<ArticleModel>(`${API_BASE_URL}`);
+    const response = await axios.post<ArticleModel>(`${API_BASE_URL}`, obj);
     console.log(response);
     
     return response.data;
