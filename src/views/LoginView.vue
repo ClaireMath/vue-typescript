@@ -13,16 +13,22 @@ const servAuth: AuthService = new AuthService();
 const email = ref();
 const password = ref();
 let token: TokenInterface;
+let isAuthenticated: boolean | null;
 
 const login = async() => {
 console.log(`bouton login cliqué ${email.value} ${password.value}`)
 token = await servAuth.login(email.value, password.value)
 localStorage.setItem('token', JSON.stringify(token));
-localStorage.setItem('notConnected', "false");
+/* localStorage.setItem('isAuthenticated', true);
+isAuthenticated = localStorage.getItem('isAuthenticated'); */
 router.push({ path: '/articles' });
 
 }
 
+router.beforeEach((to, from, next) => {
+  if (to.name !== 'login' && !isAuthenticated) next({ name: 'login' })
+  else next()
+})
 
 </script>
 <template>
