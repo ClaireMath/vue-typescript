@@ -22,8 +22,8 @@ export const useAuthenticationStore = defineStore({
     // actions (mettent à jour le state du store)
     actions: {
         async setValues() {
-           /*  this.user = u;
-            this.token = await servAuth.login(u?.email, u?.password);
+           // this.notConnected = JSON.parse(localStorage.getItem("notConnected"));
+           /*  this.token = await servAuth.login(u?.email, u?.password);
        */  },
     }
 })

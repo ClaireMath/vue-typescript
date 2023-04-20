@@ -6,21 +6,29 @@ import { onMounted, ref, type Ref } from 'vue';
 import { AuthService } from "@/services/AuthService";
 import type { TokenInterface } from "@/interfaces/TokenInterface";
 import { useAuthenticationStore } from '../stores/authStore';
+import router from "../router/index";
 
 let { notConnected } = useAuthenticationStore();
 const servAuth: AuthService = new AuthService();
 const email = ref();
 const password = ref();
 let token: TokenInterface;
+let isAuthenticated: boolean | null;
 
 const login = async() => {
 console.log(`bouton login cliqué ${email.value} ${password.value}`)
 token = await servAuth.login(email.value, password.value)
 localStorage.setItem('token', JSON.stringify(token));
-notConnected = false
+/* localStorage.setItem('isAuthenticated', true);
+isAuthenticated = localStorage.getItem('isAuthenticated'); */
+router.push({ path: '/articles' });
 
 }
 
+router.beforeEach((to, from, next) => {
+  if (to.name !== 'login' && !isAuthenticated) next({ name: 'login' })
+  else next()
+})
 
 </script>
 <template>
