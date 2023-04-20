@@ -7,7 +7,7 @@ import Textarea from 'primevue/textarea';
 import Dropdown from 'primevue/dropdown';
 import { ref } from "vue";
 import { ArticleService } from "@/services/ArticleService";
-
+import router from "../router/index";
 // const articles: 
 
 const titre = ref();
@@ -21,14 +21,12 @@ let respData;
 const createArticle = async (event: any) => {
   console.log(`bouton register cliqué ${titre.value} ${photo.value} ${description.value} ${tag.value}`)
   respData = await servArticle.registerArticle({ titre: titre.value, description: description.value, tag: tag.value, photo: photo.value })
+  router.push({ path: '/articles' });
 }
 
 
 
-const addArticle = (e: Event) => {
-  e.preventDefault()
-  console.log("bouton ajouter l'article cliqué")
-}
+
 
 //checker pour passer la liste en string
 const selectedCity = ref();
@@ -39,7 +37,7 @@ const cities = ref([
     { name: 'Europe'},
     { name: 'Oceanie'}
 ]);
-selectedCity.value
+
 
 </script>
 
@@ -51,20 +49,20 @@ selectedCity.value
       <div>
         <span class="p-float-label my-4 w-full ">
             <InputText id="photoArticle" v-model="photo" class="w-6" />
-            <label for="photoArticle">Photo</label>
+            <label for="photoArticle">Photo URL</label>
           </span>
         <span class="p-float-label my-4 w-full ">
-          <p>Choisissez un Tag (continent) : </p>
-          <div class="card flex justify-content-center">
-        <Dropdown v-model="tag" :options="cities" optionLabel="name" placeholder="Select a continent" class="w-full md:w-14rem" />
-    </div>
+           
+        <!--   <div class="card flex justify-content-center"> -->
+        <Dropdown id="continent" v-model="tag" :options="cities" optionLabel="name" placeholder="Select a continent" class="w-full md:w-14rem" />
+   <!--  </div> -->   <label for="continent">Continent</label>
         </span>
         <span class="p-float-label my-4 w-full ">
           <InputText id="articleTitle" v-model="titre" class="w-6" />
           <label for="articleTitle">Titre de l'article</label>
         </span>
         <div class="card flex justify-content-center">
-          <form @submit="addArticle" class="flex flex-column gap-2">
+          <div class="flex flex-column gap-2">
             <span class="p-float-label">
               <Textarea id="value" v-model="description" rows="14" cols="100" />
               <label for="value">Description</label>
@@ -72,7 +70,7 @@ selectedCity.value
 
              <Button type="submit" label="Ajouter mon article" class="w-5 align-self-center" @click="createArticle"/>
 
-          </form>
+          </div>
 
         </div>
 
