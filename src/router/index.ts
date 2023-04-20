@@ -3,6 +3,8 @@ import RegisterView from '../views/RegisterView.vue'
 import LoginView from '../views/LoginView.vue'
 import ArticlesListView from '../views/ArticlesListView.vue'
 import WriteArticleView from '../views/WriteArticleView.vue'
+import ProfileView from '../views/ProfileView.vue'
+
 
 
 const router = createRouter({
@@ -22,6 +24,11 @@ const router = createRouter({
       path: '/articles',
       name: 'articles',
       component: ArticlesListView
+    },
+    {
+      path: '/profile',
+      name: 'profile',
+      component: ProfileView
     },
     {
       path: '/writeArticle',
