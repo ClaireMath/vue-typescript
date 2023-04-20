@@ -61,7 +61,7 @@ selectedCity.value
               <Textarea id="value" v-model="value" rows="14" cols="100" />
               <label for="value">Description</label>
             </span>
-             <Button type="submit" label="Ajouter mon article" />
+             <Button type="submit" label="Ajouter mon article" class="w-5 align-self-center"/>
           </form>
 
         </div>
