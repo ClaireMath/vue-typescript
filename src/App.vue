@@ -2,12 +2,14 @@
 import { RouterLink, RouterView } from 'vue-router'
 import 'primeflex/primeflex.css';
 import Button from 'primevue/button';
+import { useAuthenticationStore } from './stores/authStore';
 
-/* function logout() {
-  console.log("bouton cliqué")
-} */
+let notConnected: boolean = true
+let { token } = useAuthenticationStore();
+
 const logout = () => {
   console.log("bouton cliqué")
+  localStorage.removeItem("token");
 }
 
 </script>
@@ -20,17 +22,19 @@ const logout = () => {
         <img alt="Typesript logo" class=" ml-4 rounded" src="@/assets/typescriptIcon.png" width="125" height="125" />
       </div>
 
-     
 
-        <nav class="mt-6">
-          <RouterLink to="/">Créer un compte |</RouterLink>
 
-          <RouterLink v-if="true" to="/login" class="ml-2">Se connecter |</RouterLink>
-          <RouterLink v-else to="/login" @click="logout"> Se déconnecter |</RouterLink>
-          <RouterLink to="/articles" class="ml-2">Blog</RouterLink>
+      <nav class="mt-6">
+        <RouterLink to="/">Créer un compte |</RouterLink>
 
-        </nav>
-    
+        <RouterLink to="/login" class="ml-2">Se connecter |</RouterLink>
+        <RouterLink to="/login" @click="logout" class="ml-2"> Se déconnecter |</RouterLink>
+        <RouterLink to="/articles" class="ml-2">Blog</RouterLink>
+        <RouterLink to="/profile" class="ml-2">| Profil  |</RouterLink>
+
+
+      </nav>
+
     </header>
 
     <RouterView />
