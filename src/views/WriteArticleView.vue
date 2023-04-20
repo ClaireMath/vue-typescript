@@ -8,6 +8,8 @@ import Dropdown from 'primevue/dropdown';
 import { ref } from "vue";
 import { ArticleService } from "@/services/ArticleService";
 import router from "../router/index";
+import RadioButton from 'primevue/radiobutton';
+
 // const articles: 
 
 const titre = ref();
@@ -23,22 +25,6 @@ const createArticle = async (event: any) => {
   respData = await servArticle.registerArticle({ titre: titre.value, description: description.value, tag: tag.value, photo: photo.value })
   router.push({ path: '/articles' });
 }
-
-
-
-
-
-//checker pour passer la liste en string
-const selectedCity = ref();
-const cities = ref([
-    { name: 'Afrique'},
-    { name: 'Amerique'},
-    { name: 'Asie'},
-    { name: 'Europe'},
-    { name: 'Oceanie'}
-]);
-
-
 </script>
 
 <template>
@@ -51,12 +37,28 @@ const cities = ref([
             <InputText id="photoArticle" v-model="photo" class="w-6" />
             <label for="photoArticle">Photo URL</label>
           </span>
-        <span class="p-float-label my-4 w-full ">
-           
-        <!--   <div class="card flex justify-content-center"> -->
-        <Dropdown id="continent" v-model="tag" :options="cities" optionLabel="name" placeholder="Select a continent" class="w-full md:w-14rem" />
-   <!--  </div> -->   <label for="continent">Continent</label>
-        </span>
+          <div class="flex flex-wrap gap-6">
+    <div class="flex align-items-center">
+        <RadioButton v-model="tag" inputId="afrique" name="afrique" value="afrique" />
+        <label for="afrique" class="ml-2">Afrique</label>
+    </div>
+    <div class="flex align-items-center">
+        <RadioButton v-model="tag" inputId="amerique" name="amerique" value="amerique" />
+        <label for="amerique" class="ml-2">Amerique</label>
+    </div>
+    <div class="flex align-items-center">
+        <RadioButton v-model="tag" inputId="oceanie" name="oceanie" value="oceanie" />
+        <label for="oceanie" class="ml-2">Oceanie</label>
+    </div>
+    <div class="flex align-items-center">
+        <RadioButton v-model="tag" inputId="europe" name="europe" value="europe" />
+        <label for="europe" class="ml-2">Europe</label>
+    </div>
+    <div class="flex align-items-center">
+        <RadioButton v-model="tag" inputId="asie" name="asie" value="asie" />
+        <label for="asie" class="ml-2">Asie</label>
+    </div>
+</div>
         <span class="p-float-label my-4 w-full ">
           <InputText id="articleTitle" v-model="titre" class="w-6" />
           <label for="articleTitle">Titre de l'article</label>
