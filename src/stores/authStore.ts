@@ -12,7 +12,7 @@ export const useAuthenticationStore = defineStore({
     //initialisation du state
     state: () => {
         return {
-            notConnected: true,
+         //   isAuthenticated: true,
             user: null,
             token: {},
             email: null,
