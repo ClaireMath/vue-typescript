@@ -12,7 +12,7 @@ export class AuthService {
     /*  register(obj: UserModel, url: string = 'http://localhost:8080/api/v1/user/register'): Promise<UserModel> {
          return axios.post<UserModel>(`${url}`, obj).then(this.respPromise) as Promise<T>;
      } */
-    register (obj: UserModel, url: string = 'http://localhost:8080/api/v1/user/register'): Promise<AuthInter> {
+    register(obj: UserModel, url: string = 'http://localhost:8080/api/v1/user/register'): Promise<AuthInter> {
         return axios.post<AuthInter>(`${url}`, obj).then(response => {
             return response.data;
         });
