@@ -6,6 +6,7 @@ import { onMounted, ref, type Ref } from 'vue';
 import { AuthService } from "@/services/AuthService";
 import type { TokenInterface } from "@/interfaces/TokenInterface";
 import { useAuthenticationStore } from '../stores/authStore';
+import router from "../router/index";
 
 let { notConnected } = useAuthenticationStore();
 const servAuth: AuthService = new AuthService();
@@ -17,7 +18,8 @@ const login = async() => {
 console.log(`bouton login cliqué ${email.value} ${password.value}`)
 token = await servAuth.login(email.value, password.value)
 localStorage.setItem('token', JSON.stringify(token));
-notConnected = false
+localStorage.setItem('notConnected', "false");
+router.push({ path: '/articles' });
 
 }
 

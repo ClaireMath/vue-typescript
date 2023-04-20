@@ -9,7 +9,10 @@ import { type Ref, ref, onMounted } from 'vue';
 const articlesList: Ref<ArticleModel[]> = ref([]);
 const servArticle: ArticleService = new ArticleService();
 
+
 onMounted(async () => {
+  const notConnected = localStorage.getItem("notConnected").value;
+
     articlesList.value = await servArticle.getAllArticles();
     console.log(articlesList.value);
     
