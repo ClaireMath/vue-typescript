@@ -4,18 +4,22 @@ import Button from "primevue/button"
 import InputText from 'primevue/inputtext';
 import 'primeflex/primeflex.css';
 import { AuthService } from "@/services/AuthService.js";
+import router from "../router/index";
+import type { TokenInterface } from '@/interfaces/TokenInterface';
 
 const email = ref();
 const username = ref();
 const pwd = ref();
 
 const servAuth: AuthService = new AuthService();
+let token: TokenInterface;
 
-let respData;
 const createUser = async (event: any) => {
   console.log(`bouton register cliqué ${email.value} ${pwd.value} ${username.value}`)
 //  const user = { username: username.value, email: email.value, password: pwd.value }
-  respData = await servAuth.register({ username: username.value, email: email.value, password: pwd.value })
+  token = await servAuth.register({ username: username.value, email: email.value, password: pwd.value })
+  localStorage.setItem('token', JSON.stringify(token));
+  router.push({ path: '/articles' });
 }
 
 </script>
