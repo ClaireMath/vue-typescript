@@ -120,7 +120,8 @@ const goToAddArticle = () => {
                   <img :src=item.photo class="align-self-center justify-self-center border-round mb-4" />
                 </div>
                 <div class="w-full flex justify-content-center border-round">
-                  <p class="align-self-center w-8 text-justify">{{ item.description }}</p>
+                    <Button label="Voir plus" link />
+                  <p class="item-description align-self-center w-8 text-justify">{{ item.description }}</p>
                 </div>
               </template>
             </Card>
@@ -135,3 +136,8 @@ const goToAddArticle = () => {
 
   </div>
 </template>
+<style  scoped>
+.item-description{
+  overflow: hidden;
+}
+</style>

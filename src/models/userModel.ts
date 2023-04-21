@@ -1,8 +1,8 @@
 export class UserModel {
-    id?: String;
-    username?: String;
-    email?: String;
-    password?: String;
-    role?: String;
+    id?: string;
+    username?: string;
+    email?: string;
+    password?: string;
+    role?: string;
     
 }

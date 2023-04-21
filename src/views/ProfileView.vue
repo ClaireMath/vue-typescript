@@ -3,8 +3,6 @@ import Button from "primevue/button"
 import InputText from 'primevue/inputtext';
 import 'primeflex/primeflex.css';
 import 'primeicons/primeicons.css';
-import Textarea from 'primevue/textarea';
-import Dropdown from 'primevue/dropdown';
 import { type Ref, ref, onMounted } from 'vue';
 import type { UserModel } from "@/models/userModel";
 import { UserService } from "@/services/UserService";
