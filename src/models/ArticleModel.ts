@@ -1,11 +1,8 @@
-export class ArticleModel {
-    constructor(
-    id: String,
-    tag: string,
-    titre: string,
-    description: string,
-    photo: string
-    ){}
-    
+export class ArticleModel { 
+    id?: string;
+    tag?: string;
+    titre?: string;
+    description?: string;
+    photo?: string;
     
 }

@@ -1,11 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import 'primeflex/primeflex.css';
-import Button from 'primevue/button';
-import { useAuthenticationStore } from './stores/authStore';
 
-let notConnected: boolean = true
-let { token } = useAuthenticationStore();
 
 const logout = () => {
   console.log("bouton cliqué")

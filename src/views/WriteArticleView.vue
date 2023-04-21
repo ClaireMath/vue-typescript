@@ -4,13 +4,11 @@ import InputText from 'primevue/inputtext';
 import 'primeflex/primeflex.css';
 import 'primeicons/primeicons.css';
 import Textarea from 'primevue/textarea';
-import Dropdown from 'primevue/dropdown';
 import { ref } from "vue";
 import { ArticleService } from "@/services/ArticleService";
 import router from "../router/index";
 import RadioButton from 'primevue/radiobutton';
-
-// const articles: 
+ 
 
 const titre = ref();
 const description = ref();

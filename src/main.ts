@@ -1,8 +1,7 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import PrimeVue from 'primevue/config';
-import "primevue/resources/themes/md-light-deeppurple/theme.css"; //theme
-// import "primevue/resources/themes/mdc-light-deeppurple/theme.css";
+import "primevue/resources/themes/mdc-light-deeppurple/theme.css"; //theme
 import "primevue/resources/primevue.min.css"; //core CSS
 import "primeicons/primeicons.css"; //icons
 

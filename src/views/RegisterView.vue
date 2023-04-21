@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref } from 'vue';
 import Button from "primevue/button"
 import InputText from 'primevue/inputtext';
 import 'primeflex/primeflex.css';
 import { AuthService } from "@/services/AuthService.js";
-import type { UserModel } from "@/models/userModel.js";
-
 
 const email = ref();
 const username = ref();

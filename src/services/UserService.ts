@@ -1,6 +1,5 @@
 // import axios from '../api';
 import type { UserModel } from '@/models/userModel';
-import type { AxiosResponse } from 'axios';
 import axios from 'axios';
 import type { AuthInter } from '@/interfaces/AuthInterface';
 

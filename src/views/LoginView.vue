@@ -2,18 +2,15 @@
 import Button from "primevue/button"
 import InputText from 'primevue/inputtext';
 import 'primeflex/primeflex.css';
-import { onMounted, ref, type Ref } from 'vue';
+import { ref, type Ref } from 'vue';
 import { AuthService } from "@/services/AuthService";
 import type { TokenInterface } from "@/interfaces/TokenInterface";
-import { useAuthenticationStore } from '../stores/authStore';
 import router from "../router/index";
 
-//let { isAuthenticated } = useAuthenticationStore();
 const servAuth: AuthService = new AuthService();
 const email = ref();
 const password = ref();
 let token: TokenInterface;
-// let isAuthenticated: boolean | null;
 
 const login = async() => {
 console.log(`bouton login cliqué ${email.value} ${password.value}`)
